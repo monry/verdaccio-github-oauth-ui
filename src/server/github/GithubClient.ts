@@ -1,9 +1,11 @@
-import got, { GotJSONOptions } from "got"
+import { GotJSONOptions } from "got"
 import { merge as deepAssign } from "lodash"
 
 import { OAuth } from "./OAuth"
 import { Organization } from "./Organization"
 import { User } from "./User"
+
+const got = require('got');
 
 export class GithubClient {
 

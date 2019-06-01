@@ -7,7 +7,7 @@ import { Auth, RemoteUser } from "../verdaccio-types"
 import { getConfig, PluginConfig } from "./PluginConfig"
 
 // tslint:disable-next-line:no-var-requires
-const { getSecurity } = require("../../../node_modules/verdaccio/build/lib/auth-utils")
+const { getSecurity } = require("verdaccio/build/lib/auth-utils")
 
 export class Callback {
 
