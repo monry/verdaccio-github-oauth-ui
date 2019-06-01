@@ -24,10 +24,28 @@ interface QueryParams {
 
   const updateUsageInfo = () => {
     const info = getUsageInfo()
-    const element = document.querySelector("TODO") as HTMLButtonElement
 
-    if (element) {
-      element.innerText = info.join("\n")
+    var parentElement = document.querySelector('header > div > div');
+    if (parentElement) {
+      const baseElement = document.createElement('div');
+      baseElement.setAttribute('id', 'auth-info');
+      baseElement.addEventListener('click', () => {
+        const range = document.createRange();
+        range.selectNodeContents(<Node>document.querySelector('#auth-info'));
+
+        const selection = window.getSelection();
+        if (selection) {
+          selection.removeAllRanges();
+          selection.addRange(range);
+        }
+      });
+
+      const textElement = document.createElement('p');
+      textElement.innerText = info.join("\n");
+
+      baseElement.appendChild(textElement);
+
+      parentElement.appendChild(baseElement);
     } else {
       setTimeout(updateUsageInfo, 100)
     }

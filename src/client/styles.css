@@ -6,3 +6,12 @@
 #help-card div div {
   display: none;
 }
+
+#auth-info {
+  overflow: hidden;
+  max-width: 300px;
+}
+
+#auth-info p {
+  white-space: nowrap;
+}
